@@ -1,5 +1,4 @@
 {
-  "homepage": "https://karinkaleb.github.io/music",
   "name": "music-player",
   "private": true,
   "proxy": "http://localhost:3001",
