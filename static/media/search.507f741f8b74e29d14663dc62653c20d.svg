@@ -1,0 +1,21 @@
+<svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_124_3030_dd" x="0.000000" y="0.000000" width="40.000000" height="40.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="4"/>
+			<feGaussianBlur stdDeviation="1.33333"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+	</defs>
+	<g filter="url(#filter_124_3030_dd)">
+		<rect id="Search_S" rx="0.000000" width="31.000000" height="31.000000" transform="translate(4.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+		<path id="Vector" d="M27.77 22.35L33.59 28.49C34.15 29.08 34.13 30.02 33.55 30.59C32.98 31.15 32.07 31.13 31.52 30.55L25.7 24.4C23.72 25.92 21.49 26.76 19.01 26.92C17.35 27.02 15.74 26.79 14.18 26.22C12.63 25.66 11.27 24.86 10.11 23.81C8.96 22.77 8.01 21.5 7.27 20C6.53 18.5 6.12 16.91 6.02 15.22C5.92 13.54 6.15 11.9 6.7 10.32C7.26 8.74 8.05 7.37 9.08 6.19C10.11 5.01 11.36 4.05 12.84 3.3C14.32 2.55 15.89 2.12 17.55 2.02C19.21 1.92 20.82 2.15 22.37 2.71C23.93 3.27 25.28 4.08 26.44 5.12C27.6 6.16 28.55 7.43 29.29 8.93C30.02 10.43 30.44 12.03 30.54 13.71C30.6 14.78 30.53 15.84 30.33 16.87C30.12 17.91 29.8 18.89 29.37 19.8C28.93 20.72 28.4 21.57 27.77 22.35ZM18.84 23.99C20.11 23.91 21.3 23.58 22.43 23C23.56 22.43 24.51 21.69 25.3 20.79C26.09 19.89 26.69 18.84 27.12 17.63C27.55 16.43 27.73 15.18 27.65 13.89C27.58 12.6 27.26 11.38 26.69 10.24C26.12 9.1 25.4 8.13 24.51 7.33C23.63 6.53 22.59 5.92 21.41 5.48C20.22 5.05 18.99 4.87 17.72 4.95C16.45 5.03 15.25 5.35 14.12 5.93C13 6.51 12.04 7.25 11.26 8.15C10.47 9.05 9.86 10.1 9.43 11.3C9 12.51 8.83 13.75 8.9 15.04C8.98 16.33 9.3 17.55 9.87 18.69C10.43 19.84 11.16 20.81 12.04 21.6C12.93 22.4 13.96 23.02 15.15 23.45C16.34 23.89 17.56 24.06 18.84 23.99Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
