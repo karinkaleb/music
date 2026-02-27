@@ -1,30 +1,3 @@
-// Импорт музыки
-import song1 from "../data/songs/sweet-love.mp3";
-import song2 from "../data/songs/stay-free.mp3";
-import song3 from "../data/songs/warm-feeling.mp3";
-import song4 from "../data/songs/summer-way.mp3";
-import song5 from "../data/songs/euphoria.mp3";
-import song6 from "../data/songs/this-is-beauty.mp3";
-import song7 from "../data/songs/happy-pop.mp3";
-import song8 from "../data/songs/butterfly.mp3";
-import song9 from "../data/songs/future-beat-expedition-pop.mp3";
-import song10 from "../data/songs/a-trip-to-the-trees.mp3";
-import song11 from "../data/songs/rise.mp3";
-import song12 from "../data/songs/sunset.mp3";
-// Импорт картинки
-import song1Cover from "../data/songs_covers/sweet-love-cover.jpg";
-import song2Cover from "../data/songs_covers/stay-free-cover.jpg";
-import song3Cover from "../data/songs_covers/warm-feeling-cover.jpg";
-import song4Cover from "../data/songs_covers/summer-way-cover.jpg";
-import song5Cover from "../data/songs_covers/euphoria-cover.jpg";
-import song6Cover from "../data/songs_covers/this-is-beauty-cover.jpg";
-import song7Cover from "../data/songs_covers/happy-pop-cover.jpg";
-import song8Cover from "../data/songs_covers/butterfly-cover.jpg";
-import song9Cover from "../data/songs_covers/future-beat-cover.jpg";
-import song10Cover from "../data/songs_covers/a-trip-to-the-trees-cover.jpg";
-import song11Cover from "../data/songs_covers/rise-cover.jpg";
-import song12Cover from "../data/songs_covers/sunset-cover.jpg";
-
 export const tracks = [
   {
     id: 1,
@@ -32,8 +5,8 @@ export const tracks = [
     artist: "DayFox",
     albumId: "Sweet Love",
     genre: "Поп",
-    src: song1,
-    cover: song1Cover,
+    src: "/songs/sweet-love.mp3",
+    cover: "/covers/sweet-love-cover.jpg",
     duration: "3:13",
   },
   {
@@ -42,8 +15,8 @@ export const tracks = [
     artist: "BoDleasons",
     albumId: "Stay Free",
     genre: "Хип-поп",
-    src: song2,
-    cover: song2Cover,
+    src: "/songs/stay-free.mp3",
+    cover: "/covers/stay-free-cover.jpg",
     duration: "2:21",
   },
   {
@@ -52,8 +25,8 @@ export const tracks = [
     artist: "not-kawaii",
     albumId: "Warm Feeling",
     genre: "Классика",
-    src: song3,
-    cover: song3Cover,
+    src: "/songs/warm-feeling.mp3",
+    cover: "/covers/warm-feeling-cover.jpg",
     duration: "2:58",
   },
   {
@@ -62,8 +35,8 @@ export const tracks = [
     artist: "AudioCoffee",
     albumId: "Summer Way",
     genre: "Романтика",
-    src: song4,
-    cover: song4Cover,
+    src: "/songs/summer-way.mp3",
+    cover: "/covers/summer-way-cover.jpg",
     duration: "2:35",
   },
   {
@@ -72,8 +45,8 @@ export const tracks = [
     artist: "Playsound",
     albumId: "Euphoria",
     genre: "Спокойная",
-    src: song5,
-    cover: song5Cover,
+    src: "/songs/euphoria.mp3",
+    cover: "/covers/euphoria-cover.jpg",
     duration: "2:16",
   },
   {
@@ -82,8 +55,8 @@ export const tracks = [
     artist: "The_Mountain",
     albumId: "This is Beauty",
     genre: "Мотивация",
-    src: song6,
-    cover: song6Cover,
+    src: "/songs/this-is-beauty.mp3",
+    cover: "/covers/this-is-beauty-cover.jpg",
     duration: "2:04",
   },
   {
@@ -92,8 +65,8 @@ export const tracks = [
     artist: "BoDleasons",
     albumId: "Happy Pop",
     genre: "Природа",
-    src: song7,
-    cover: song7Cover,
+    src: "/songs/happy-pop.mp3",
+    cover: "/covers/happy-pop-cover.jpg",
     duration: "2:11",
   },
   {
@@ -102,8 +75,8 @@ export const tracks = [
     artist: "audiorezout",
     albumId: "Butterfly",
     genre: "Радостно",
-    src: song8,
-    cover: song8Cover,
+    src: "/songs/butterfly.mp3",
+    cover: "/covers/butterfly-cover.jpg",
     duration: "2:28",
   },
   {
@@ -112,8 +85,8 @@ export const tracks = [
     artist: "PineAppleMusic",
     albumId: "Future Beat Expedition",
     genre: "Тренировка",
-    src: song9,
-    cover: song9Cover,
+    src: "/songs/future-beat-expedition-pop.mp3",
+    cover: "/covers/future-beat-cover.jpg",
     duration: "2:02",
   },
   {
@@ -122,8 +95,8 @@ export const tracks = [
     artist: "Leonell Cassio & Carrie",
     albumId: "A Trip To The Trees",
     genre: "Танцпоп",
-    src: song10,
-    cover: song10Cover,
+    src: "/songs/a-trip-to-the-trees.mp3",
+    cover: "/covers/a-trip-to-the-trees-cover.jpg",
     duration: "2:21",
   },
   {
@@ -132,8 +105,8 @@ export const tracks = [
     artist: "Corporate Music Zone",
     albumId: "Rise",
     genre: "Рок",
-    src: song11,
-    cover: song11Cover,
+    src: "/songs/rise.mp3",
+    cover: "/covers/rise-cover.jpg",
     duration: "2:45",
   },
   {
@@ -142,8 +115,8 @@ export const tracks = [
     artist: "Alex-Productions",
     albumId: "Sunset",
     genre: "Электроника",
-    src: song12,
-    cover: song12Cover,
+    src: "/songs/sunset.mp3",
+    cover: "/covers/sunset-cover.jpg",
     duration: "2:03",
   },
 ];
