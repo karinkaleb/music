@@ -85,7 +85,7 @@ function App() {
   };
 
   return (
-    <HashRouter basename="/music-player">
+    <HashRouter basename="/music">
       <div className="App">
         {/* Передаем isLoggedIn в Navigation */}
         <Navigation isLoggedIn={isLoggedIn} />
