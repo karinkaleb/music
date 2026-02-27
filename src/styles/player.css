@@ -1,0 +1,203 @@
+/* 
+Основной контейнер аудиоплеера 
+Фиксированное позиционирование в нижней части экрана
+*/
+.player {
+  position: fixed;
+  bottom: 20px;
+  left: 280px;
+  right: 40px;
+  background: rgba(12, 20, 38, 0.95);
+  border-radius: 12px;
+  padding: 25px 35px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid #2a2e3a;
+  z-index: 999;
+  justify-content: space-between;
+}
+
+.album-cover-small {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  border: 2px solid #38bdf8;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.album-cover-small:hover {
+  transform: scale(1.05);
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: auto;
+  width: 320px;
+}
+
+.track-meta h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}
+
+.track-meta p {
+  font-size: 14px;
+  color: #8b9bb4;
+  margin: 4px 0 0 0;
+}
+
+.player-center {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 600px;
+  padding: 0 60px;
+  max-width: 800px;
+}
+
+.progress-bar {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.progress-bar input[type="range"] {
+  height: 6px;
+}
+
+.progress-bar input[type="range"]::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.volume-control {
+  min-width: 180px;
+  margin-left: -40px;
+  padding-left: 150px;
+  border-left: 1px solid #2a2e3a;
+}
+
+.track-info .heart-btn {
+  margin-left: auto;
+  padding: 4px;
+  transition: transform 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.track-info .heart-btn:hover {
+  transform: scale(1.1);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.control-btn.play-pause {
+  background: #1a6383;
+  width: 56px;
+  height: 56px;
+  margin: 0 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+}
+
+.control-btn.play-pause:hover {
+  transform: scale(1.05);
+}
+
+.control-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .player {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .album-cover-small {
+    width: 64px;
+    height: 64px;
+  }
+
+  .track-info {
+    order: 1;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .player-center {
+    order: 3;
+    width: 100%;
+    padding: 10px 0;
+    min-width: unset;
+  }
+
+  .volume-control {
+    order: 2;
+    min-width: 140px;
+    margin-left: 0;
+    padding-left: 15px;
+    border-left: none;
+    justify-content: flex-start;
+  }
+
+  .control-btn.play-pause {
+    width: 56px;
+    height: 56px;
+  }
+
+  .controls {
+    order: 2;
+    gap: 12px;
+  }
+
+  .control-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .progress-bar input[type="range"] {
+    height: 8px;
+  }
+
+  .progress-bar input[type="range"]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+}

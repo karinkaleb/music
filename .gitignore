@@ -1,0 +1,10 @@
+# Зависимости
+node_modules/
+# Файлы окружения
+.env
+.npmrc
+# Серверные файлы
+server.js
+config/
+models/
+uploads/

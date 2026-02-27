@@ -1,0 +1,122 @@
+/* 
+ * Основной контейнер навигационной панели
+ * Фиксированная позиция с анимированным изменением ширины
+ */
+.left-navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  transition: width 0.3s ease;
+  height: 100vh;
+  background: linear-gradient(180deg, #0D0F17 0%, #1A1D28 100%);
+  padding: 20px;
+  flex-direction: column;
+  z-index: 1000;
+  gap: 8px; /* Увеличим промежуток между элементами */
+  border-right: 1px solid #2A2E3A;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Унифицированные стили для всех секций */
+.nav-section {
+  padding: 0;
+  border: 1px solid transparent; /* Прозрачная граница для анимации */
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+/* Стили для групп ссылок */
+.nav-link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Общие стили для навигационных ссылок */
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: #94a3b8;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 17px;
+  position: relative;
+  background: transparent;
+  border: 1px solid transparent; /* Добавляем границу */
+}
+
+/* Состояние при наведении */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  transform: translateX(6px);
+  border-color: rgba(56, 189, 248, 0.2); /* Голубая граница при ховере */
+}
+
+/* Активное состояние */
+.nav-link.active {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border-color: #38bdf8; /* Яркая голубая граница */
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.1);
+}
+
+/* Индикатор активной ссылки (голубая полоса) */
+.active-indicator {
+  width: 3px;
+  height: 24px;
+  background: #38bdf8;
+  position: absolute;
+  right: -12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 2px;
+}
+
+.nav-link.active .active-indicator {
+  opacity: 1;
+}
+
+/* Иконки */
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: filter 0.2s ease;
+}
+
+.nav-link:hover .nav-icon {
+  filter: brightness(1.2);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .left-navigation {
+    width: 72px;
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 14px;
+    justify-content: center;
+    border-radius: 6px;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .active-indicator {
+    right: -6px;
+    height: 20px;
+  }
+
+  .nav-link:hover {
+    transform: translateX(4px);
+  }
+}

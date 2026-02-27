@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Основные стили */
+  background: #0D0F17;
+  color: #E0E4EC;
+  overflow-x: hidden;
+}
+
+/* Стили для отображения программного кода */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Анимации и переходы */
+.track-info {
+  transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.album-cover-small {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .left-navigation {
+    width: 72px;
+  }
+}

@@ -1,0 +1,14 @@
+<svg width="52.000000" height="52.000000" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip178_5419">
+			<rect id="Heart_XS" rx="0.000000" width="51.000000" height="51.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Heart_XS" rx="0.000000" width="51.000000" height="51.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip178_5419)">
+		<path id="Vector" d="M26 11.21C30.58 6.95 37.66 7.09 42.07 11.67C46.48 16.26 46.63 23.56 42.53 28.32L27.73 43.69L25.99 45.5L24.26 43.69L9.46 28.32C5.36 23.56 5.51 16.25 9.92 11.67C14.34 7.09 21.4 6.94 26 11.21ZM11.31 26.64Q10.23 25.37 9.65 23.89Q8.94 22.09 9 19.99Q9.05 17.9 9.85 16.14Q10.52 14.66 11.72 13.41Q13.13 11.95 14.84 11.26Q16.29 10.67 17.96 10.62Q19.66 10.58 21.16 11.11Q22.86 11.71 24.29 13.04L26 14.63L27.7 13.04Q29.12 11.72 30.8 11.12Q32.31 10.58 34.03 10.62Q35.72 10.67 37.17 11.26Q38.87 11.96 40.27 13.41L40.27 13.41Q41.49 14.67 42.16 16.18Q42.94 17.93 42.99 20Q43.04 22.08 42.35 23.88Q41.77 25.36 40.68 26.64L25.99 41.89L11.31 26.64Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

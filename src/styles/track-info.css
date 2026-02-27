@@ -1,0 +1,118 @@
+/* Основной контейнер информации о треке */
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2.2em 2.4em 0.8em;
+  margin-left: auto;
+}
+
+/* Контейнер для обложки трека */
+.track-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стилизация изображения обложки */
+.track-cover img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+/* Стили для SVG-обложки по умолчанию */
+.track-cover svg {
+  width: 60px;
+  height: 60px;
+  padding: 0.5em;
+  border-radius: 8px;
+}
+
+/* Блок с названием трека и исполнителем */
+.track-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1em;
+}
+
+/* Заголовок трека */
+.track-title h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Название исполнителя */
+.track-title h3 {
+  color: #6d7d8c;
+  font-weight: 600;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Контейнер для заголовка с иконкой избранного */
+.title-with-heart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Стилизация кнопки избранного */
+.heart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+  margin-left: 1rem;
+}
+
+/* Эффект при наведении на кнопку */
+.heart-btn:hover {
+  opacity: 0.9;
+}
+
+/* Базовые стили иконки сердца */
+.heart-icon {
+  width: 24px;
+  height: 24px;
+  fill: #38bdf8;
+  transition: fill 0.3s ease;
+}
+
+/* Эффект при наведении на иконку */
+.heart-btn:hover .heart-icon {
+  fill: #60a5fa;
+}
+
+/* Анимация при клике на кнопку */
+.heart-btn:active {
+  transform: scale(0.95);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .track-info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1em;
+    gap: 0.8rem;
+  }
+  
+  .track-cover img,
+  .track-cover svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .track-title h1 {
+    font-size: 1rem;
+  }
+  
+  .track-title h3 {
+    font-size: 0.8rem;
+  }
+}

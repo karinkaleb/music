@@ -1,0 +1,120 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0D0F17 0%, #1A1D28 100%);
+  padding: 2rem;
+}
+
+.auth-card {
+  background: rgba(26, 29, 40, 0.95);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(56, 189, 248, 0.1);
+  -webkit-backdrop-filter: blur(12px); /* Добавлен вендорный префикс */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+/* Остальные стили без изменений */
+.auth-card h2 {
+  color: #E0E4EC;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 16px 24px;
+  margin-bottom: 1.8rem;
+  background: rgba(42, 46, 58, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  color: #E0E4EC;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.auth-form input::placeholder {
+  color: #6d7d8c;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 
+    0 0 0 3px rgba(56, 189, 248, 0.2),
+    inset 0 1px 4px rgba(255, 255, 255, 0.05);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 
+    transform 0.2s,
+    box-shadow 0.3s;
+  margin-top: 1rem;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(56, 189, 248, 0.3),
+    0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+.auth-link {
+  text-align: center;
+  color: #8b9bb4;
+  margin-top: 2rem;
+  font-size: 1.05rem;
+}
+
+.auth-link a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.auth-link a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 2.5rem;
+    max-width: 90%;
+    margin: 0 1rem;
+  }
+  
+  .auth-form input {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+  
+  .auth-button {
+    padding: 16px;
+  }
+}

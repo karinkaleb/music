@@ -1,0 +1,287 @@
+/* Основные стили поисковой страницы */
+.search-container {
+  padding: 1rem; /* Внутренний отступ контейнера */
+  max-width: 1200px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера по горизонтали */
+}
+
+/* Стили для страницы жанра */
+.genre-page {
+  padding: 2rem; /* Внутренний отступ страницы */
+  color: white; /* Базовый цвет текста */
+  max-width: 1200px; /* Максимальная ширина контента */
+  margin: 0 auto; /* Центрирование контента */
+  position: relative; /* Позиционирование для размещения дочерних элементов */
+  padding-top: 80px; /* Отступ сверху для аккомодации заголовка */
+}
+
+.genre-header {
+  display: flex; /* Флексбокс для выравнивания элементов */
+  flex-direction: column; /* Элементы расположены вертикально */
+  gap: 1rem; /* Расстояние между элементами */
+  margin-bottom: 2rem; /* Отступ снизу для разделения контента */
+}
+
+.genre-header h1 {
+  font-size: 2.5rem; /* Размер заголовка */
+  color: #E0E4EC; /* Цвет текста заголовка */
+}
+
+.genre-meta {
+  display: flex; /* Флексбокс для метаданных */
+  gap: 1.5rem; /* Расстояние между элементами */
+  color: #8b9bb4; /* Цвет текста метаданных */
+  font-size: 1.1rem; /* Размер шрифта */
+}
+
+/* Обертка для поля поиска */
+.search-input-wrapper {
+  position: relative; /* Позиционирование для иконки поиска */
+  margin: 2rem 0; /* Отступ сверху и снизу */
+}
+
+/* Современное поле ввода поиска */
+.modern-search {
+  width: 100%; /* Полная ширина контейнера */
+  padding: 16px 24px 16px 56px; /* Внутренние отступы с учетом иконки */
+  border: none; /* Убираем границу */
+  border-radius: 30px; /* Закругление углов */
+  background: #1A1D28; /* Фоновое цветовое оформление */
+  color: #E0E4EC; /* Цвет текста */
+  font-size: 18px; /* Размер шрифта */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Тень для эффекта глубины */
+  transition: all 0.3s ease; /* Плавные переходы при изменении состояния */
+}
+
+.modern-search:focus {
+  outline: none; /* Убираем рамку фокуса */
+  box-shadow: 0 0 0 2px #38bdf8; /* Подсветка при фокусе */
+}
+
+/* Иконка поиска */
+.search-icon {
+  position: absolute; /* Абсолютное позиционирование внутри обертки */
+  left: 20px; /* Отступ слева */
+  top: 50%; /* Центрирование по вертикали */
+  transform: translateY(-50%); /* Корректировка центрирования */
+  width: 24px; /* Ширина иконки */
+  height: 24px; /* Высота иконки */
+  fill: #8B9BB4; /* Цвет иконки */
+}
+
+/* Разделитель секций */
+.section-divider {
+  border: 0; /* Убираем стандартную границу */
+  height: 1px; /* Высота линии */
+  background: #2A2E3A; /* Цвет линии */
+  margin: 2rem 0; /* Отступ сверху и снизу */
+}
+
+/* Сетка секций поиска */
+.search-sections {
+  display: grid; /* Использование сетки для размещения секций */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Адаптивные колонки */
+  gap: 2rem; /* Расстояние между элементами */
+  margin-top: 2rem; /* Отступ сверху */
+}
+
+.search-section {
+  background: transparent; /* Прозрачный фон */
+  border-radius: 12px; /* Закругление углов */
+  padding: 0 !important; /* Убираем внутренние отступы */
+  margin-bottom: 2.5rem !important; /* Отступ снизу */
+}
+
+.search-section h2 {
+  font-size: 1.5rem; /* Размер заголовка */
+  color: #E0E4EC; /* Цвет текста */
+  margin-bottom: 0.1rem; /* Отступ снизу */
+  font-weight: 600; /* Жирность шрифта */
+}
+
+/* ========= ОБНОВЛЕННЫЕ СТИЛИ КАРТОЧЕК ЖАНРОВ ========= */
+.genres-grid {
+  display: grid; /* Использование сетки для карточек жанров */
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+  gap: 1.5rem; /* Расстояние между карточками */
+  padding: 2rem 0; /* Внутренние отступы */
+}
+
+.genre-card {
+  min-width: 200px; /* Минимальная ширина карточки */
+  min-height: 200px; /* Минимальная высота карточки */
+  aspect-ratio: 1/1; /* Соотношение сторон 1:1 */
+  border-radius: 20px; /* Закругление углов */
+  padding: 12px; /* Внутренние отступы */
+  display: flex; /* Флексбокс для центрирования содержимого */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  cursor: pointer; /* Курсор указывает на кликабельность */
+  transition: transform 0.3s ease; /* Плавное масштабирование при наведении */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+}
+
+.genre-card:hover {
+  transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.genre-title {
+  font-size: 1.8rem; /* Размер текста */
+  white-space: nowrap; /* Текст в одну строку */
+  overflow: hidden; /* Скрытие переполнения */
+  text-overflow: ellipsis; /* Добавление многоточия при переполнении */
+  display: flex; /* Флексбокс для центрирования */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  width: 100%; /* Ширина текстового блока */
+  color: white; /* Цвет текста */
+  font-weight: 600; /* Жирность шрифта */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень для текста */
+}
+
+/* История поиска */
+.history-grid {
+  display: grid; /* Использование сетки для истории поиска */
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+  gap: 1rem; /* Расстояние между элементами */
+  margin: 1.5rem 0; /* Отступ сверху и снизу */
+}
+
+.search-history-item {
+  background: #1A1D28; /* Фоновый цвет элемента */
+  padding: 1rem; /* Внутренние отступы */
+  border-radius: 8px; /* Закругление углов */
+  margin-bottom: 0.5rem; /* Отступ снизу */
+  font-size: 1.1rem; /* Размер шрифта */
+  color: #8B9BB4; /* Цвет текста */
+  transition: all 0.2s; /* Плавные переходы при изменении состояния */
+}
+
+.search-history-item:hover {
+  background: #252A38; /* Изменение фона при наведении */
+  color: #E0E4EC; /* Изменение цвета текста */
+}
+
+/* Результаты поиска */
+.search-results {
+  margin-top: 2rem; /* Отступ сверху */
+}
+
+.tracks-grid {
+  display: grid; /* Использование сетки для результатов поиска */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Адаптивные колонки */
+  gap: 1.5rem; /* Расстояние между элементами */
+  margin-top: 1.5rem; /* Отступ сверху */
+}
+
+/* Кнопка "Назад" */
+.back-button {
+  position: absolute; /* Абсолютное позиционирование */
+  top: 20px; /* Отступ сверху */
+  left: 2rem; /* Отступ слева */
+  background: rgba(45, 55, 72, 0.9); /* Фоновый цвет с прозрачностью */
+  border: none; /* Убираем границу */
+  border-radius: 8px; /* Закругление углов */
+  cursor: pointer; /* Курсор указывает на кликабельность */
+  padding: 10px; /* Внутренние отступы */
+  transition: all 0.2s; /* Плавные переходы при изменении состояния */
+  z-index: 1000; /* Уровень слоя для видимости */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Тень для глубины */
+  display: flex; /* Флексбокс для иконки */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+}
+
+.back-button:hover {
+  background: rgba(45, 55, 72, 1); /* Изменение фона при наведении */
+  transform: translateY(-1px); /* Легкое поднятие кнопки */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Усиление тени */
+}
+
+.back-button:active {
+  transform: translateY(1px); /* Опускание кнопки при нажатии */
+}
+
+.back-button svg {
+  width: 28px; /* Ширина иконки */
+  height: 28px; /* Высота иконки */
+  fill: #E0E4EC; /* Цвет иконки */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Тень для иконки */
+}
+
+/* ========= АДАПТИВНЫЕ СТИЛИ ========= */
+@media (max-width: 1024px) {
+  .genres-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки для средних экранов */
+  }
+}
+
+@media (max-width: 768px) {
+  .genre-header h1 {
+    font-size: 1.8rem; /* Уменьшение размера заголовка */
+  }
+  
+  .genre-meta {
+    flex-direction: column; /* Вертикальное расположение метаданных */
+    gap: 0.5rem; /* Уменьшение расстояния между элементами */
+  }
+
+  .genres-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки для маленьких экранов */
+  }
+
+  .genre-card {
+    min-width: 160px; /* Уменьшение минимальной ширины карточки */
+    min-height: 160px; /* Уменьшение минимальной высоты карточки */
+  }
+
+  .genre-title {
+    font-size: 0.9rem; /* Уменьшение размера текста */
+  }
+
+  .modern-search {
+    font-size: 16px; /* Уменьшение размера текста */
+    padding: 14px 20px 14px 48px; /* Уменьшение внутренних отступов */
+  }
+
+  .search-sections {
+    grid-template-columns: 1fr; /* Одна колонка для маленьких экранов */
+  }
+
+  .back-button {
+    top: 15px; /* Уменьшение отступа сверху */
+    left: 15px; /* Уменьшение отступа слева */
+    padding: 8px; /* Уменьшение внутренних отступов */
+  }
+
+  .back-button svg {
+    width: 24px; /* Уменьшение ширины иконки */
+    height: 24px; /* Уменьшение высоты иконки */
+  }
+}
+
+@media (max-width: 480px) {
+  .genres-grid {
+    grid-template-columns: 1fr; /* Одна колонка для очень маленьких экранов */
+  }
+
+  .genre-card {
+    min-width: 100%; /* Карточки занимают всю ширину */
+    height: 120px; /* Уменьшение высоты карточки */
+    aspect-ratio: unset; /* Отключение соотношения сторон */
+  }
+
+  .genre-title {
+    font-size: 0.8rem; /* Уменьшение размера текста */
+    padding: 0 5px; /* Уменьшение внутренних отступов */
+  }
+
+  .search-container {
+    padding: 1rem; /* Уменьшение внутренних отступов */
+  }
+
+  .modern-search {
+    font-size: 14px; /* Уменьшение размера текста */
+    padding: 12px 16px 12px 40px; /* Уменьшение внутренних отступов */
+  }
+}

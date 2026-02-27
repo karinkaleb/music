@@ -1,0 +1,150 @@
+/* 
+ * Основной контейнер страницы альбома
+ * - Центрирует контент по горизонтали
+ * - Задает максимальную ширину контента 1200px
+ * - Белый текст на темном фоне
+ */
+.album-page {
+  padding: 2rem; /* Внутренние отступы */
+  color: white; /* Цвет текста */
+  max-width: 1200px; /* Максимальная ширина контента */
+  margin: 0 auto; /* Центрирование контейнера */
+  position: relative; /* Для позиционирования дочерних элементов */
+  padding-top: 80px; /* Отступ для кнопки "Назад" */
+  padding-left: 2rem; /* Левый отступ */
+}
+
+/* Стили для кнопки "Назад" */
+.back-button {
+  position: absolute; /* Абсолютное позиционирование */
+  top: 20px; /* Расположение сверху */
+  left: 2rem; /* Расположение слева */
+  background: rgba(45, 55, 72, 0.9); /* Фон с прозрачностью */
+  border: none; /* Убираем границу */
+  border-radius: 8px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+  padding: 10px; /* Внутренние отступы */
+  transition: all 0.2s; /* Плавные переходы */
+  z-index: 1000; /* Уровень слоя поверх других элементов */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Тень */
+  display: flex; /* Флекс-контейнер для иконки */
+  align-items: center; /* Выравнивание по вертикали */
+  justify-content: center; /* Выравнивание по горизонтали */
+}
+
+.back-button:hover {
+  background: rgba(45, 55, 72, 1); /* Фон при наведении */
+  transform: translateY(-1px); /* Сдвиг вверх */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Усиленная тень */
+}
+
+.back-button:active {
+  transform: translateY(1px); /* Сдвиг вниз при клике */
+}
+
+.back-button svg {
+  width: 28px; /* Размер иконки */
+  height: 28px;
+  fill: #E0E4EC; /* Цвет иконки */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Тень иконки */
+}
+
+/* Модернизированный стиль обложки (v2) */
+.album-cover-main {
+  width: 200px; /* Фиксированная ширина */
+  height: 200px; /* Фиксированная высота */
+  border-radius: 17px; /* Скругление углов */
+  box-shadow: 0 12px 32px rgba(5, 9, 19, 0.5); /* Глубокая тень */
+  margin: 20px 0 0 3.3rem; /* Отступы сверху и слева */
+}
+
+/* Заголовочный блок альбома */
+.album-header {
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Выравнивание по вертикали */
+  gap: 2rem; /* Промежуток между элементами */
+  margin-bottom: 2rem; /* Отступ снизу */
+}
+
+.album-header h1 {
+  font-size: 2.1rem; /* Размер заголовка */
+  color: #E0E4EC; /* Цвет текста */
+}
+
+/* Блок метаданных альбома */
+.album-meta {
+  display: flex; /* Флекс-контейнер */
+  gap: 1.5rem; /* Промежуток между элементами */
+  color: #8b9bb4; /* Цвет текста */
+  margin-bottom: 2rem; /* Отступ снизу */
+}
+
+/* Статистика альбома */
+.album-stats {
+  display: flex; /* Флекс-контейнер */
+  gap: 3rem; /* Промежуток между элементами */
+  margin-bottom: 2rem; /* Отступ снизу */
+}
+
+.stat-item {
+  text-align: center; /* Выравнивание текста */
+}
+
+.stat-value {
+  display: block; /* Блочный элемент */
+  font-size: 1.8rem; /* Размер значения */
+  color: #38bdf8; /* Акцентный цвет */
+  font-weight: 600; /* Жирность шрифта */
+}
+
+.stat-label {
+  color: #8b9bb4; /* Цвет метки */
+  font-size: 0.9rem; /* Размер шрифта */
+}
+
+.genre-header {
+  margin-bottom: 2rem; /* Отступ снизу */
+  padding: 20px; /* Внутренние отступы */
+  background: rgba(255, 255, 255, 0.05); /* Полупрозрачный фон */
+  border-radius: 12px; /* Скругление углов */
+}
+
+.genre-meta {
+  font-size: 1.1rem; /* Размер шрифта */
+  color: #8b9bb4; /* Цвет текста */
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .album-header {
+    flex-direction: column; /* Вертикальное расположение */
+    text-align: center; /* Выравнивание текста */
+    align-items: center; /* Центрирование элементов */
+  }
+
+  .album-cover-main {
+    width: 150px; /* Уменьшенная ширина */
+    height: 150px; /* Уменьшенная высота */
+    margin-top: 10px; /* Уменьшенный отступ сверху */
+  }
+
+  .album-header h1 {
+    font-size: 1.8rem; /* Уменьшенный размер заголовка */
+  }
+
+  .album-stats {
+    flex-direction: column; /* Вертикальное расположение */
+    gap: 1rem; /* Уменьшенный промежуток */
+  }
+
+  .back-button {
+    top: 15px; /* Корректировка позиции */
+    left: 15px;
+    padding: 8px; /* Уменьшенные отступы */
+  }
+  
+  .back-button svg {
+    width: 24px; /* Уменьшенный размер иконки */
+    height: 24px;
+  }
+}

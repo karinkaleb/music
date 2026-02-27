@@ -1,0 +1,80 @@
+/* 
+Контейнер управления громкостью звука 
+Содержит иконку громкости и ползунок регулировки
+*/
+.volume-control {
+  display: flex;          /* Flex-контейнер для выравнивания элементов в строку */
+  align-items: center;    /* Вертикальное центрирование элементов */
+  gap: 8px;               /* Расстояние между иконкой и ползунком */
+  min-width: 180px;       /* Минимальная ширина контейнера */
+  margin-left: -40px;     /* Компенсация левого отступа для выравнивания в общем интерфейсе */
+  padding-left: 40px;     /* Левый отступ для создания пространства */
+  border-left: 1px solid #2a2e3a; /* Вертикальная разделительная линия слева */
+}
+
+/* Стилизация иконки громкости (SVG) */
+.volume-icon {
+  width: 24px;           /* Ширина иконки */
+  height: 24px;          /* Высота иконки */
+  fill: #38bdf8;         /* Цвет заливки иконки - голубой */
+}
+
+/* Кастомизированный ползунок громкости (input range) */
+.volume-slider {
+  -webkit-appearance: none; /* Отключение дефолтного вида в WebKit */
+  appearance: none;       /* Универсальное отключение дефолтного вида */
+  width: 140px;           /* Ширина ползунка */
+  height: 4px;            /* Высота трека */
+  background: #2a2e3a;    /* Цвет фона трека */
+  border-radius: 2px;     /* Скругление углов трека */
+  background-repeat: no-repeat; /* Запрет повторения фона */
+  transition: background 0.2s; /* Плавное изменение фона */
+}
+
+/* Стилизация трека (дорожки) для WebKit */
+.volume-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #38bdf8 calc(var(--volume-level, 0) * 100%), /* Синяя заполненная часть */
+    #2a2e3a calc(var(--volume-level, 0) * 100%)  /* Темная пустая часть */
+  );
+  height: 4px;            /* Высота трека */
+  border-radius: 2px;     /* Скругление углов */
+}
+
+/* Стилизация бегунка для WebKit */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Отключение дефолтного вида */
+  appearance: none;       /* Универсальное отключение дефолтного вида */
+  width: 12px;            /* Ширина бегунка */
+  height: 12px;           /* Высота бегунка */
+  background: #38bdf8;    /* Цвет бегунка */
+  border-radius: 50%;     /* Круглая форма */
+  cursor: pointer;        /* Курсор-указатель */
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3); /* Голубая неоновая тень */
+  margin-top: -4px;       /* Центрирование бегунка относительно трека */
+}
+
+/* Стилизация трека для Firefox */
+.volume-slider::-moz-range-track {
+  background: #2a2e3a;    /* Цвет фона трека */
+  border-radius: 2px;     /* Скругление углов */
+  height: 4px;            /* Высота трека */
+}
+
+/* Прогресс-бар для Firefox */
+.volume-slider::-moz-range-progress {
+  background: #38bdf8;    /* Цвет заполненной части */
+  height: 4px;            /* Высота заполненной части */
+  border-radius: 2px;     /* Скругление заполненной части */
+}
+
+/* Стилизация бегунка для Firefox */
+.volume-slider::-moz-range-thumb {
+  width: 12px;            /* Ширина бегунка */
+  height: 12px;           /* Высота бегунка */
+  background: #38bdf8;    /* Цвет бегунка */
+  border-radius: 50%;     /* Круглая форма */
+  border: none;           /* Удаление стандартной обводки */
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3); /* Голубая тень */
+}

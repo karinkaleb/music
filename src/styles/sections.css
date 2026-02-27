@@ -1,0 +1,225 @@
+/* 
+ * Базовые стили секции контента 
+ * Используется для группировки связанных элементов (альбомы, плейлисты)
+ */
+.section {
+  margin: 2rem 0; /* Внешние отступы сверху/снизу */
+  padding: 0 2rem; /* Внутренние отступы по бокам */
+  border-bottom: 1px solid #2A2E3A; /* Нижняя граница */
+  padding-bottom: 2rem; /* Отступ снизу перед границей */
+  margin-bottom: 2rem; /* Нижний отступ после границы */
+}
+
+/* 
+ * Заголовок секции с кнопкой управления 
+ * Гибкое распределение пространства между элементами
+ */
+.section-header {
+  display: flex; /* Флекс-контейнер */
+  justify-content: space-between; /* Максимальное расстояние между элементами */
+  align-items: center; /* Выравнивание по вертикали */
+  margin-bottom: 1.5rem; /* Отступ снизу */
+}
+
+/* 
+ * Основной заголовок секции 
+ * Акцентный текстовый элемент
+ */
+.section-title {
+  color: #fff; /* Белый цвет текста */
+  font-size: 1.6rem; /* Размер шрифта */
+}
+
+/* 
+ * Контейнер горизонтальной прокрутки альбомов 
+ * Адаптивная сетка с автоматическим заполнением
+ */
+.album-scroll-container {
+  display: grid; /* Грид-контейнер */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Адаптивные колонки */
+  gap: 1.5rem; /* Промежуток между элементами */
+  overflow-x: visible; /* Видимость горизонтального скролла */
+}
+
+/* Кастомизация скроллбара для WebKit */
+.album-scroll-container::-webkit-scrollbar {
+  height: 8px; /* Высота скроллбара */
+}
+
+.album-scroll-container::-webkit-scrollbar-thumb {
+  background: #38bdf8; /* Цвет ползунка */
+  border-radius: 4px; /* Скругление углов */
+}
+
+/* 
+ * Карточка альбома 
+ * Интерактивный элемент с hover-эффектами
+ */
+.album-card {
+  min-width: 180px; /* Минимальная ширина */
+  background: #161A25; /* Фоновый цвет */
+  border-radius: 12px; /* Скругление углов */
+  padding: 1rem; /* Внутренние отступы */
+  transition: all 0.3s; /* Плавные переходы */
+  cursor: pointer; /* Курсор при наведении */
+  flex-shrink: 0; /* Запрет сжатия элемента */
+}
+
+/* Эффекты при наведении на карточку */
+.album-card:hover {
+  border: 2px solid #38bdf8; /* Акцентная рамка */
+  transform: translateY(-5px); /* Сдвиг вверх */
+}
+
+/* Стили для карточек жанров */
+.genre-card {
+  aspect-ratio: 1/1; /* Соотношение сторон 1:1 */
+  border-radius: 16px; /* Скругление углов */
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Выравнивание по вертикали */
+  justify-content: center; /* Выравнивание по горизонтали */
+  cursor: pointer; /* Курсор при наведении */
+  transition: transform 0.3s ease; /* Плавное масштабирование */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень */
+  position: relative; /* Для позиционирования оверлея */
+  overflow: hidden; /* Обрезка содержимого */
+}
+
+.genre-card::after {
+  content: ""; /* Псевдоэлемент для затемнения */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0; /* Полное покрытие карточки */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+  z-index: 1; /* Уровень слоя */
+}
+
+.genre-title {
+  position: relative; /* Позиционирование относительно псевдоэлемента */
+  z-index: 2; /* Поверх затемнения */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* Тень текста */
+}
+
+/* 
+ * Обложка альбома 
+ * Поддерживает пропорции и обрабатывает разные размеры
+ */
+.album-cover {
+  width: 100%; /* Полная ширина */
+  height: 200px; /* Фиксированная высота */
+  border-radius: 8px; /* Скругление углов */
+  object-fit: cover; /* Сохранение пропорций */
+  margin-bottom: 1rem; /* Отступ снизу */
+}
+
+/* 
+ * Название альбома 
+ * Обработка длинных текстовых строк
+ */
+.album-title {
+  font-size: 20px; /* Размер шрифта */
+  color: #E0E4EC; /* Цвет текста */
+  margin-bottom: 0.5rem; /* Отступ снизу */
+  white-space: nowrap; /* Запрет переноса строк */
+  overflow: hidden; /* Обрезка содержимого */
+  text-overflow: ellipsis; /* Троеточие при обрезке */
+}
+
+/* 
+ * Исполнитель альбома 
+ * Второстепенная информация
+ */
+.album-artist {
+  font-size: 16px; /* Размер шрифта */
+  color: #7C8395; /* Серый цвет текста */
+}
+
+/* 
+ * Кнопка "Показать все" 
+ * Интерактивный элемент управления контентом
+ */
+.show-all-button {
+  background: transparent; /* Прозрачный фон */
+  border: 1px solid #3A3F4D; /* Граница */
+  color: #7C8395; /* Цвет текста */
+  padding: 6px 16px; /* Внутренние отступы */
+  border-radius: 20px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+  transition: all 0.3s; /* Плавные переходы */
+  font-size: 1.1rem; /* Размер шрифта */
+}
+
+/* Состояние кнопки при взаимодействии */
+.show-all-button:hover {
+  border-color: #38BDF8; /* Акцентная граница */
+  color: #38BDF8; /* Акцентный текст */
+}
+
+/* 
+ * Мобильная адаптация 
+ * Оптимизация для экранов ≤768px
+ */
+@media (max-width: 768px) {
+  .album-scroll-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 12px; /* Уменьшенный промежуток */
+  }
+
+  .album-card {
+    min-width: unset; /* Сброс минимальной ширины */
+    padding: 12px; /* Уменьшенные отступы */
+    height: auto; /* Автоматическая высота */
+  }
+
+  .album-cover {
+    height: 120px; /* Уменьшенная высота обложки */
+  }
+
+  .section-title {
+    font-size: 1.2rem; /* Меньший размер заголовка */
+  }
+
+  .show-all-button {
+    padding: 4px 12px; /* Уменьшенные отступы */
+  }
+}
+
+/* 
+ * Совместимость с устаревшими стилями 
+ * Резервные стили для grid-элементов
+ */
+.items-grid {
+  display: grid; /* Грид-контейнер */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Адаптивные колонки */
+  gap: 1.5rem; /* Промежуток между элементами */
+}
+
+.grid-item {
+  background: linear-gradient(145deg, #152448, #1a2d5a); /* Градиентный фон */
+  border-radius: 16px; /* Скругление углов */
+  padding: 1.5rem; /* Внутренние отступы */
+  transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
+  box-shadow: 0 8px 24px rgba(5, 9, 19, 0.3); /* Тень */
+}
+
+/* 
+ * Стили страницы альбома 
+ * Дополнительные элементы для детализированного отображения
+ */
+.album-page {
+  padding: 2rem; /* Внутренние отступы */
+  color: white; /* Белый текст */
+}
+
+.album-header {
+  margin-bottom: 2rem; /* Отступ снизу */
+}
+
+.album-stats {
+  display: flex; /* Флекс-контейнер */
+  gap: 2rem; /* Промежуток между элементами */
+  color: #6d7d8c; /* Серый текст */
+  font-size: 0.9rem; /* Размер шрифта */
+}

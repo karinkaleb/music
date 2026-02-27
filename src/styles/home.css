@@ -1,0 +1,14 @@
+.section {
+  margin: 2rem 0;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 8px;
+}

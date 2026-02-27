@@ -1,0 +1,104 @@
+.user-menu {
+  position: relative;
+  margin-left: 1.5rem; /* Обновленный отступ */
+}
+
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.user-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.user-icon {
+  width: 48px;
+  height: 48px;
+  fill: #E0E4EC;
+  border: 2px solid rgba(224, 228, 236, 0.3);
+  border-radius: 50%;
+  padding: 4px;
+  transition: 
+    transform 0.3s,
+    border-color 0.3s ease;
+}
+
+.user-button:hover .user-icon {
+  border-color: #38bdf8;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.3));
+}
+
+.user-label {
+  color: #E0E4EC;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 240px;
+  padding: 12px;
+  background: #1A1D28;
+  border: 1px solid #2A2E3A;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  color: #E0E4EC;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropdown-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #38bdf8;
+  border-radius: 50%;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .user-button {
+    padding: 10px 16px;
+  }
+  
+  .user-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .user-label {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    min-width: 140px;
+    right: -10px;
+  }
+}

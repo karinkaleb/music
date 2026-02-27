@@ -1,0 +1,161 @@
+/* 
+ * Основной контейнер плейлиста
+ * - Вертикальное расположение треков в колонку
+ * - Фиксированная высота 704px (44em) с вертикальным скроллом
+ * - Крупные внутренние отступы 32px/48px (2em/3em)
+ */
+.playlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.95em;
+  padding: 2em 3em;
+  height: 44em;
+  overflow-y: auto;
+}
+
+/* 
+ * Специфичные стили для плейлистов внутри страниц альбомов
+ * - Убраны верхние отступы для плотной интеграции с заголовком
+ * - Синяя граница заголовка (#38bdf8) в фирменном стиле
+ */
+.album-playlist {
+  padding: 0 2rem 2rem;
+}
+
+.album-playlist .track-header {
+  border-bottom-color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+/* 
+ * Кастомизация скроллбара для WebKit-браузеров
+ * - Узкая полоса прокрутки 5px
+ * - Прозрачный бегунок с закругленными краями
+ */
+.playlist::-webkit-scrollbar {
+  width: 5px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 5px;
+}
+
+/* 
+ * Блок статистики плейлиста
+ * - Горизонтальное распределение: треки/время/избранное
+ * - Серо-синий текст (#6d7d8c) для второстепенной информации
+ * - Компактные отступы 16px (1rem) по краям
+ */
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: #6d7d8c;
+  font-size: 1.0em;
+}
+
+/* 
+ * Заголовок списка треков
+ * - Сетка из 4 колонок: номер/название/избранное/длительность
+ * - Синяя разделительная линия (#38bdf8) толщиной 2px
+ * - Полужирный шрифт (600) для акцента
+ */
+.track-header {
+  display: grid;
+  grid-template-columns: 65px 3fr 1fr 1fr;
+  padding: 1rem;
+  color: #38bdf8;
+  font-weight: 600;
+  border-bottom: 2px solid #38bdf8;
+}
+
+/* 
+ * Блок длительности трека
+ * - Выравнивание элементов по правому краю
+ * - Компактные внутренние отступы 2px/6px
+ * - Закругленные углы для ховер-эффектов
+ */
+.duration-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* 
+ * Иконка часов для колонки длительности
+ * - Фиксированный размер 20x20px
+ * - Синяя заливка (#38bdf8) с эффектом свечения
+ * - Отступ справа 8px для разделения с текстом
+ */
+.header-clock-icon {
+  width: 20px;
+  height: 20px;
+  fill: #38bdf8;
+  margin-right: 8px;
+  filter: drop-shadow(0 0 2px #38bdf8);
+}
+
+/* 
+ * Мобильная адаптация (≤768px)
+ * Упрощенная версия с вертикальным расположением элементов
+ */
+@media (max-width: 768px) {
+  /* Базовый плейлист */
+  .playlist {
+    padding: 1em;
+    height: auto;
+    gap: 0.5em;
+  }
+
+  /* Альбомные плейлисты */
+  .album-playlist {
+    padding: 0 1rem 1rem;
+  }
+
+  /* Адаптация заголовка треков */
+  .track-header {
+    grid-template-columns: 30px 2fr 1fr 1fr;
+    justify-items: center;
+    padding: 0.5rem;
+    font-size: 0.8em;
+  }
+
+  /* Уменьшенная иконка часов */
+  .header-clock-icon {
+    width: 16px;
+    height: 16px;
+    filter: drop-shadow(0 0 1px #38bdf8);
+  }
+
+  /* Компактный блок длительности */
+  .duration-header {
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  /* Карточка трека */
+  .track-card {
+    grid-template-columns: 30px 1fr 40px;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  /* Единые размеры шрифтов */
+  .track-number,
+  .duration-div {
+    font-size: 0.9rem;
+  }
+
+  /* Ограничение текста в названиях */
+  .info-div h3 {
+    font-size: 1rem;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

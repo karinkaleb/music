@@ -1,0 +1,99 @@
+/* 
+Основной контейнер прогресс-бара с временной шкалой 
+Использует CSS Grid для расположения элементов
+*/
+.progress-bar {
+  display: grid;              /* Активация Grid-раскладки */
+  grid-template-areas:        /* Определение областей сетки */
+    "range"                   /* Верхняя область - ползунок */
+    "time";                   /* Нижняя область - время */
+  grid-template-columns: repeat(1, 1fr); /* Одна колонка на всю ширину */
+  margin: 8px auto 0;        /* Внешние отступы: сверху 8px, авто по бокам */
+  gap: 0.8em;                /* Расстояние между элементами сетки */
+  width: 80%;                /* Ширина относительно родительского контейнера */
+}
+
+/* Контейнер для отображения времени воспроизведения */
+.time-info {
+  grid-area: time;           /* Привязка к области "time" в Grid */
+  display: flex;             /* Flex-контейнер для времени */
+  flex-direction: row;       /* Расположение в строку */
+  justify-content: space-between; /* Равное распределение по ширине */
+}
+
+/* Базовые стили текстовых элементов времени */
+.progress-bar span {
+  color: #6d7d8c;           /* Цвет текста - серо-голубой */
+  font-weight: 400;         /* Нормальная толщина шрифта */
+}
+
+/* Кастомизация элемента range input */
+.progress-bar input[type="range"] {
+  grid-area: range;         /* Привязка к области "range" в Grid */
+  margin: 0;                /* Сброс стандартных отступов */
+  -webkit-appearance: none; /* Отключение дефолтного вида в WebKit */
+  appearance: none;         /* Отключение дефолтного вида в других браузерах */
+  background: #2a2e3a;      /* Основной цвет фона трека */
+  background-image: linear-gradient(#38bdf8, #38bdf8); /* Синий градиент прогресса */
+  background-size: var(--fill-percentage, 0%) 100%; /* Динамическая ширина заполнения */
+  background-repeat: no-repeat; /* Запрет повторения градиента */
+  cursor: pointer;          /* Курсор-указатель при наведении */
+  height: 3px;              /* Высота ползунка */
+}
+
+/* Стилизация трека (дорожки) ползунка для WebKit */
+.progress-bar input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;              /* Высота дорожки */
+  border-radius: 5em;       /* Скругление краев */
+}
+
+/* Стилизация бегунка (ползунка) для WebKit */
+.progress-bar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Отключение дефолтного вида */
+  appearance: none;         /* Универсальное отключение дефолтного вида */
+  width: 12px;              /* Ширина бегунка */
+  height: 12px;             /* Высота бегунка */
+  background: #fff;         /* Цвет кружка */
+  border: 2px solid #38bdf8;/* Голубая обводка */
+  border-radius: 50%;       /* Круглая форма */
+  box-shadow: 0px 0px 82px 4px rgba(21, 36, 72, 1); /* Синяя неоновая тень */
+  margin-top: -4.5px;       /* Центрирование по вертикали */
+}
+
+/* Состояния бегунка при взаимодействии */
+.progress-bar input[type="range"]::-webkit-slider-thumb:hover {
+  border: 2px solid #fff;    /* Белая обводка при наведении */
+  background-color: #38bdf8; /* Голубой фон при наведении */
+}
+
+/* Стили для Firefox - трек */
+.progress-bar input[type="range"]::-moz-range-track {
+  background: #2a2e3a;      /* Цвет фона трека */
+  height: 3px;              /* Высота дорожки */
+  border-radius: 5em;       /* Скругление краев */
+}
+
+/* Стили для Firefox - бегунок */
+.progress-bar input[type="range"]::-moz-range-thumb {
+  width: 12px;              /* Ширина бегунка */
+  height: 12px;             /* Высота бегунка */
+  background: #fff;         /* Цвет кружка */
+  border: 2px solid #38bdf8;/* Голубая обводка */
+  border-radius: 50%;       /* Круглая форма */
+  box-shadow: 0px 0px 82px 4px rgba(21, 36, 72, 1); /* Синяя тень */
+}
+
+/* Состояния бегунка Firefox при наведении */
+.progress-bar input[type="range"]::-moz-range-thumb:hover {
+  border: 2px solid #fff;    /* Белая обводка */
+  background-color: #38bdf8; /* Голубой фон */
+}
+
+/* Специфичные стили для элементов времени */
+#time-progress {
+  text-align: left;          /* Выравнивание текущего времени слева */
+}
+
+#duration {
+  text-align: right;         /* Выравнивание длительности трека справа */
+}

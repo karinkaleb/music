@@ -1,0 +1,92 @@
+/* Основной контейнер элементов управления плеером */
+.controls {
+  display: flex;
+  gap: 20px; 
+  justify-content: center;
+  padding: 0;
+  border-top: 2px solid #152448;
+}
+
+/* Базовые стили для кнопок управления */
+.control-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 50%;
+}
+
+/* Стилизация SVG-иконок внутри кнопок */
+.control-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Специальные стили для центральной кнопки (воспроизведение/пауза) */
+.control-btn.play-pause {
+  background: #38bdf8;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 16px rgba(56,189,248,0.3);
+  margin: 0 8px;
+}
+
+.control-btn.play-pause:hover {
+  background: #60a5fa;
+}
+
+/* Анимация при наведении */
+.control-btn:hover {
+  transform: scale(1.1);
+}
+
+.control-btn:hover svg {
+  filter: brightness(1.2);
+}
+
+/* Зеркальное отражение элементов */
+.reflected {
+  transform: scale(-1, 1);
+}
+
+.mirrored {
+  transform: scaleX(-1);
+}
+
+/* Корректировки позиций */
+.control-btn.rewind.next .mirrored {
+  margin-left: -2px;
+}
+
+.control-btn.next .mirrored {
+  transform: scaleX(-1) translateY(1px);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .player {
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+    height: auto;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .volume-control {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Добавленные стили для кнопок управления */
+  .controls {
+    gap: 15px;
+  }
+  
+  .control-btn.play-pause {
+    width: 48px;
+    height: 48px;
+  }
+}
