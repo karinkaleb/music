@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import './styles/sections.css';
 import "./App.css";
 import Player from "./components/Player";
@@ -85,6 +85,7 @@ function App() {
   };
 
   return (
+    <HashRouter>
       <div className="App">
         {/* Передаем isLoggedIn в Navigation */}
         <Navigation isLoggedIn={isLoggedIn} />
@@ -126,6 +127,7 @@ function App() {
           toggleFavorite={toggleFavorite}
         />
       </div>
+    </HashRouter>
   );
 }
 
